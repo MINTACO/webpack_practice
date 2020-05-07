@@ -1,7 +1,9 @@
 //符合commonjs规范
-var path = require('path'); 
-var WebpackDeepScopeAnalysisPlugin = require('webpack-deep-scope-plugin').default;
-var MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path'); 
+const glob = require('glob');
+const WebpackDeepScopeAnalysisPlugin = require('webpack-deep-scope-plugin').default;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
 
 module.exports = {
     //入口
@@ -14,8 +16,8 @@ module.exports = {
 
     //出口
     output: {
-        path: path.resolve(__dirname, 'dist/js'),
-        filename: '[name].bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'js/[name].bundle.js'
     },
 
     //loader  
@@ -47,13 +49,19 @@ module.exports = {
     //plugin(插件)
     //使用：下载 --> require --> 配置
     plugins: [
-        //js作用域深度shaking
+        //单独抽离css文件
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: '[name].css',
+            filename: 'css/[name].css',
             // chunkFilename: '[id].css',
         }),
+        //css treeshaking必须放在js之前
+        new PurifyCSSPlugin({
+            // Give paths to parse for rules. These should be absolute!
+            paths: glob.sync(path.join(__dirname, './*.html')),
+        }),
+        //js作用域深度shaking
         new WebpackDeepScopeAnalysisPlugin(),
     ],
 
