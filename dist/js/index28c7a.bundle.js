@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _less_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./less/index.less */ \"./src/less/index.less\");\n/* harmony import */ var _less_index_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_less_index_less__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nconsole.log('index');\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _less_index_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./less/index.less */ \"./src/less/index.less\");\n/* harmony import */ var _less_index_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_less_index_less__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _static_img_bg1_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../static/img/bg1.png */ \"./static/img/bg1.png\");\n/* harmony import */ var _static_img_bg1_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_static_img_bg1_png__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\nconsole.log('index');\r\nconsole.log('----------------------------');\r\n\r\nvar img = document.createElement('img');\r\nimg.src = _static_img_bg1_png__WEBPACK_IMPORTED_MODULE_1___default.a;\r\n// document.addEventListener('DOMContentLoaded', function(){\r\n//     let oDiv = document.getElementsByClassName(\"box\")[0];\r\n//     let oP = document.createElement(\"p\");\r\n//     let txt = document.createTextNode(\"world\");\r\n//     oP.appendChild(txt);\r\n//     oDiv.appendChild(oP);\r\n// }, false)\r\ndocument.body.appendChild(img);\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -106,6 +106,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _les
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/less/index.less?");
+
+/***/ }),
+
+/***/ "./static/img/bg1.png":
+/*!****************************!*\
+  !*** ./static/img/bg1.png ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected character '�' (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n(Source code omitted for this binary file)\");\n\n//# sourceURL=webpack:///./static/img/bg1.png?");
 
 /***/ })
 

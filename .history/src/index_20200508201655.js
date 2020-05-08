@@ -13,4 +13,3 @@ img.src = bg;
 //     oP.appendChild(txt);
 //     oDiv.appendChild(oP);
 // }, false)
-document.body.appendChild(img);

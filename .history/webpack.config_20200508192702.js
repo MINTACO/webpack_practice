@@ -54,23 +54,23 @@ module.exports = {
                     
                 ]
             },
-            {
-                test: /\.(jpg|jpeg|png|gif)$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: "url-loader",
-                        options: {
-                            name: '[name][hash:5].[ext]',
-                            //限制图片大小 <= 100kb,进行base64编码,大于100kb会打包出来
-                            limit: 1024 * 1,
-                            
-                            outputPath: 'img'
+            // {
+            //     test: /\.(jpg|jpeg|png|gif)$/,
+            //     exclude: /node_modules/,
+            //     use: [
+            //         {
+            //             loader: "url-loader",
+            //             options: {
+            //                 name: '[name][hash:5].[ext]',
+            //                 //限制图片大小 <= 100kb,进行base64编码,大于100kb会打包出来
+            //                 limit: 1024 * 100,
+            //                 fallback: 'file-loader',
+            //                 outputPath: 'img'
 
-                        }
-                    }
-                ]
-            }
+            //             }
+            //         }
+            //     ]
+            // }
         ]
     },
 

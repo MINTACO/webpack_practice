@@ -60,13 +60,10 @@ module.exports = {
                 use: [
                     {
                         loader: "url-loader",
-                        options: {
-                            name: '[name][hash:5].[ext]',
+                        Options: {
+                            name: 'img/[name][hash:5].[ext]',
                             //限制图片大小 <= 100kb,进行base64编码,大于100kb会打包出来
-                            limit: 1024 * 1,
-                            
-                            outputPath: 'img'
-
+                            limit: 100000
                         }
                     }
                 ]
@@ -100,7 +97,7 @@ module.exports = {
         new WebpackDeepScopeAnalysisPlugin(),
 
         //清理以往版本，只保留本次压缩版本
-        // new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
 
         //打包后单独抽离html文件
         new HtmlWebpackPlugin({

@@ -5,7 +5,7 @@ console.log('index');
 console.log('----------------------------');
 
 var img = document.createElement('img');
-img.src = bg;
+img.src = wali;
 // document.addEventListener('DOMContentLoaded', function(){
 //     let oDiv = document.getElementsByClassName("box")[0];
 //     let oP = document.createElement("p");
@@ -13,4 +13,3 @@ img.src = bg;
 //     oP.appendChild(txt);
 //     oDiv.appendChild(oP);
 // }, false)
-document.body.appendChild(img);

@@ -28,50 +28,31 @@ module.exports = {
     //要处理的文件需要在入口文件中引入（关联）
     //安装loader注意依赖性要同时安装
     module: {
-        rules: [
-            {
-                test: /\.less$/,
-                exclude: /node_modules/,
-                use: [
-                // {
-                //     loader: "style-loader" // creates style nodes from JS strings
-                // }, 
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        // options: {
-                        //     publicPath: './css',
-                        // },
-                    },
-                    {
-                        loader: "css-loader" // translates CSS into CommonJS
-                    },
-                    {
-                        loader: 'postcss-loader',    
-                    }, 
-                    {
-                        loader: "less-loader" // compiles Less to CSS ; need less
-                    }
-                    
-                ]
-            },
-            {
-                test: /\.(jpg|jpeg|png|gif)$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: "url-loader",
-                        options: {
-                            name: '[name][hash:5].[ext]',
-                            //限制图片大小 <= 100kb,进行base64编码,大于100kb会打包出来
-                            limit: 1024 * 1,
-                            
-                            outputPath: 'img'
-
-                        }
-                    }
-                ]
-            }
-        ]
+        rules: [{
+            test: /\.less$/,
+            exclude: /node_modules/,
+            use: [
+            // {
+            //     loader: "style-loader" // creates style nodes from JS strings
+            // }, 
+                {
+                    loader: MiniCssExtractPlugin.loader,
+                    // options: {
+                    //     publicPath: './css',
+                    // },
+                },
+                {
+                    loader: "css-loader" // translates CSS into CommonJS
+                },
+                {
+                    loader: 'postcss-loader',    
+                }, 
+                {
+                    loader: "less-loader" // compiles Less to CSS ; need less
+                }
+                
+            ]
+        }]
     },
 
     //plugin(插件)
@@ -100,7 +81,7 @@ module.exports = {
         new WebpackDeepScopeAnalysisPlugin(),
 
         //清理以往版本，只保留本次压缩版本
-        // new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
 
         //打包后单独抽离html文件
         new HtmlWebpackPlugin({

@@ -63,9 +63,9 @@ module.exports = {
                         options: {
                             name: '[name][hash:5].[ext]',
                             //限制图片大小 <= 100kb,进行base64编码,大于100kb会打包出来
-                            limit: 1024 * 1,
-                            
-                            outputPath: 'img'
+                            limit: 100000,
+                            //输出路径
+                            fallback: 'file-loader'
 
                         }
                     }
